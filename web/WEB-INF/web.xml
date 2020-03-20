@@ -3,6 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <display-name>autoscout69</display-name>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>ch.bzz.autoscout69.util.filter.LoginFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>HomeRedirectionFilter</filter-name>
+        <filter-class>ch.bzz.autoscout69.util.filter.HomeRedirectionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/home.xhtml</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>HomeRedirectionFilter</filter-name>
+        <url-pattern>/index.xhtml</url-pattern>
+        <url-pattern>/register.xhtml</url-pattern>
+        <url-pattern>/login.xhtml</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -12,4 +32,15 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    <context-param>
+        <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
+        <param-value>/WEB-INF/resources</param-value>
+    </context-param>
+    <welcome-file-list>
+        <welcome-file>/index.xhtml</welcome-file>
+    </welcome-file-list>
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>resources.application</param-value>
+    </context-param>
 </web-app>

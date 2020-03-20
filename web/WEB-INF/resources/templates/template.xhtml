@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+  	  xmlns:f="http://java.sun.com/jsf/core"
+  	  xmlns:h="http://java.sun.com/jsf/html"
+  	  style="height: 100%;">
+  	  
+<h:head>
+	<title><ui:insert name="title"></ui:insert></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="./resources/favicon.ico" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.js" type="javascript"></script>
+	<link rel="stylesheet" href="./resources/main.css"></link>
+</h:head>
+
+<h:body>
+
+   <ui:insert name="header">     
+   		<ui:include src="header.xhtml" />
+	</ui:insert>
+	
+	<h:outputText id="messages" value="#{helperBean.messages}" escape="false" />
+   <br/>
+   
+   <ui:insert name="content">
+   </ui:insert>
+   
+   <ui:insert name="footer">
+      <ui:include src="footer.xhtml" />
+   </ui:insert>
+   
+</h:body>
+
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous" type="javascript"></script>
+<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous" type="javascript"></script>
+
+</html>
+
+

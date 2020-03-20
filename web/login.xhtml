@@ -1,0 +1,19 @@
+<ui:composition template="/WEB-INF/resources/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:g7 = "http://java.sun.com/jsf/composite/taglib">
+	
+	<ui:define name="title">Login</ui:define>
+	<ui:define name="content">
+	
+	<g7:form title="Anmelden" buttonText="Anmelden" action="#{loginBean.login()}">
+		<g7:labeledInput label="Email" secret="false" placeHolder="example@example.com" type="email" required="true" value="#{loginBean.email}"></g7:labeledInput>
+		<g7:labeledInput label="Passwort" secret="true" placeHolder="password" type="password" required="true" value="#{loginBean.password}"></g7:labeledInput>
+		<p>Hast du noch keinen Account? Dann Registriere dich <a class='link' href='./register.xhtml?=#{param["aim"]}'>hier</a>.</p>
+	</g7:form>
+
+	</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+	<nav class="navbar navbar-expand-lg" style="background-color: var(--color3); border-bottom-style: solid; border-color: var(--color1)"> 
+		<a class="navbar-brand" href="/index.xhtml">
+			<img src="./resources/logo.png" height="50" alt="" />
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+				<a class="nav-link text-muted" style="#{view.viewId == '/home.xhtml' ? 'font-weight: bold;' : ''}" href="./home.xhtml">Home</a></li>
+
+				<li class="nav-item active">
+				<a class="nav-link text-muted" style="#{view.viewId == '/search.xhtml' ? 'font-weight: bold;' : ''}" href="./search.xhtml">Suchen</a></li>
+
+			</ul>
+		</div>
+
+		<h:panelGroup rendered="#{!helperBean.logedIn}">
+			<form class="form-inline my-2 my-lg-0" action="/login.xhtml">
+				<button type="submit" class="btn" >Anmelden</button>
+			</form>
+		</h:panelGroup> 
+		<h:panelGroup rendered="#{helperBean.logedIn}">
+			<h:form>
+				<h:commandButton class="btn" action="#{helperBean.logout}" value="Ausloggen">
+				</h:commandButton>
+			</h:form>
+		</h:panelGroup> 
+	</nav>
+
+</html>

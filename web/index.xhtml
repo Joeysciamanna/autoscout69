@@ -1,11 +1,86 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello World"/>
-   </f:view>
-</html>
+
+<ui:composition template="/WEB-INF/resources/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+	<ui:define name="title">Loctoc</ui:define>
+	<ui:define name="content">
+
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="well well-lg col-md-8">
+				<section class="jumbotron text-center" style="padding-bottom: 20px">
+					<div class="container">
+						<h1 class="jumbotron-heading" style="margin-bottom: 0px;">Autoscout69</h1>
+						<p class="lead text-muted">Cars for everyone</p>
+
+						<p class="lead text">
+							Buy your new car now! <br/> Cars have never been so cheap and so important to the swiss people.
+						</p>
+						<p>	<a class="btn" href="register.xhtml">Jetzt Einkaufen</a></p>
+					</div>
+					
+					<div style="width: 100%; padding-top: 10em;"></div>
+					
+					<div class="row" style="min-height: 20em">
+						<div class="col-md-3" style="position:relative">
+							<div class="card text-center" onmouseleave="down(this);" onmouseenter="up(this);" style="position:absolute; bottom:0; min-height: 16em">
+								<div class="card-body">
+									<h5 class="card-title">#{indexBean.basicPackage.name}</h5>
+									<p class="card-text">#{indexBean.basicPackage.description}</p>
+								</div>
+								<div class="card-footer" style="background-color: var(--color1); color: white;">#{indexBean.basicPackage.price}0 CHF/Mt.</div>
+							</div>
+						</div>
+						<div class="col-md-3" style="position:relative">
+							<div class="card text-center" onmouseleave="down(this);" onmouseenter="up(this);" style="position:absolute; bottom:0; min-height: 19em">
+								<div class="card-body">
+									<h5 class="card-title">#{indexBean.silverPackage.name}</h5>
+									<p class="card-text">#{indexBean.silverPackage.description}</p>
+								</div>
+								<div class="card-footer" style="background-color: var(--color1); color: white;">#{indexBean.silverPackage.price}0 CHF/Mt.</div>
+							</div>
+						</div>
+						<div class="col-md-3" style="position:relative">
+							<div class="card text-center" onmouseleave="down(this);" onmouseenter="up(this);" style="position:absolute; bottom:0; min-height: 20em">
+								<div class="card-body">
+									<h5 class="card-title">#{indexBean.goldPackage.name}</h5>
+									<p class="card-text">#{indexBean.goldPackage.description}</p>
+								</div>
+								<div class="card-footer" style="background-color: var(--color1); color: white;">#{indexBean.goldPackage.price}0 CHF/Mt.</div>
+							</div>
+						</div>
+						<div class="col-md-3" style="position:relative">
+							<div id="12" class="card text-center" onmouseleave="down(this);" onmouseenter="up(this);" style="position:absolute; bottom:0; min-height: 18em">
+								<div class="card-body">
+									<h5 class="card-title">#{indexBean.bronzePackage.name}</h5>
+									<p class="card-text">#{indexBean.bronzePackage.description}</p>
+								</div>
+								<div class="card-footer" style="background-color: var(--color1); color: white;">#{indexBean.bronzePackage.price}0 CHF/Mt.</div>
+							</div>
+						</div>
+					</div>
+					<script>
+					function down(it) {
+						$(it).animate({marginBottom : '0px' },200);
+					}
+					function up(it){
+						if($(it).css("marginBottom") == "0px"){
+							$(it).animate({marginBottom : '20px' },400);
+						}
+					}
+					</script>
+					<br/>
+				</section>
+			</div>
+			<div class="col-md-2"></div>
+
+
+		</div>
+
+
+
+
+	</ui:define>
+</ui:composition>
